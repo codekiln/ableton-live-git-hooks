@@ -1,0 +1,65 @@
+---
+description: 
+globs: *.md
+alwaysApply: false
+---
+# Logseq Documentation Location and Markdown Usage
+
+## Documentation Location
+- The primary documentation for this project is stored in the `ableton-live-git-hooks-docs/` directory
+- This is a Logseq knowledge garden containing:
+  - `pages/` - Main documentation pages
+  - `journals/` - Daily notes and progress tracking
+  - `logseq/` - Logseq application data
+
+## Markdown Style Guidelines
+
+### Logseq-Flavored Markdown (LFM)
+- **Use LFM ONLY within the `ableton-live-git-hooks-docs/` directory**
+- LFM features include:
+  - Block-based structure with TAB indentation
+  - Page links using double brackets: `[[Page Name]]`
+  - Special frontmatter handling
+  - Block references and other Logseq-specific features
+- See [logseq-flavored-markdown.mdc](mdc:.cursor/rules/logseq-cursor-rules/logseq-flavored-markdown.mdc) for detailed LFM formatting rules
+
+### Standard Markdown
+- **Use standard markdown EVERYWHERE ELSE in the repository**
+- This includes:
+  - `README.md`
+  - Any documentation outside `ableton-live-git-hooks-docs/`
+  - Code comments
+  - Issue descriptions
+  - Pull request descriptions
+- When linking to Logseq pages from outside `ableton-live-git-hooks-docs/`, use standard markdown links:
+  ```markdown
+  [Link Text](mdc:give-care-docs/pages/Page___Name.md)
+  ```
+- Do not use Logseq-style links (`[[Page Name]]`) outside of `ableton-live-git-hooks-docs/`
+
+## Examples
+
+### ✅ Correct Usage
+1. In `ableton-live-git-hooks-docs/pages/SomePage.md`:
+   ```markdown
+   - See [[Another Page]] for more details
+   - # This is a proper LFM heading
+   ```
+
+2. In `README.md`:
+   ```markdown
+   See [Documentation](mdc:give-care-docs/pages/SomePage.md) for details
+   # This is a standard markdown heading
+   ```
+
+### ❌ Incorrect Usage
+1. In `README.md`:
+   ```markdown
+   See [[Some Page]] for details  # Wrong: Using LFM links outside ableton-live-git-hooks-docs
+   ```
+
+2. In `ableton-live-git-hooks-docs/pages/SomePage.md`:
+   ```markdown
+   # This heading is wrong (missing bullet point)
+   See [Some Page](mdc:give-care-docs/pages/SomePage.md)  # Wrong: Using standard markdown links in LFM
+   ```

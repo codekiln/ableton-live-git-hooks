@@ -1,0 +1,24 @@
+# Ableton Live Git Integration
+	- ## Overview
+		- This project includes tools for version controlling Ableton Live Set files (`.als` and `.alc`) by converting them to human-readable XML
+		- The system automatically converts binary files to XML before commits and back to binary after checkout
+		- See [[Repo/Directory/Structure]] for details on the implementation
+	- ## Basic Usage
+		- ### Converting Individual Files
+			- TBD
+		- ### Converting Multiple Files
+			- TBD
+	- ## Git Hooks
+		- ### Pre-commit Hook
+			- Automatically converts staged `.als` and `.alc` files to XML
+			- Only processes files that are actually staged for commit
+			- See [[Installation]] for setup instructions
+		- ### Post-checkout Hook
+			- Automatically rebuilds binary files from XML after checkout
+			- Ensures working `.als` and `.alc` files are available for Ableton Live
+	- ## Directory Structure
+		- Binary files (`.als`, `.alc`) and their XML twins (`.als.xml`, `.alc.xml`) are stored in the same directory
+		- The system skips paths containing `/Backup/` or `/Ableton Project Info/`
+		- XML files are regenerated if:
+			- The XML file is missing
+			- The binary file is newer than the XML file

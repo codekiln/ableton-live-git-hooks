@@ -1,0 +1,49 @@
+---
+description: Project Overview and Documentation Guide
+globs: 
+alwaysApply: false
+---
+# Project Overview and Documentation Guide
+
+## Project Purpose
+- This is the **ableton-live-git-hooks** repository
+- It contains tools and workflows for managing Ableton Live projects in version control
+- For detailed project overview, see [About.md](mdc:give-care-docs/pages/About.md)
+
+## Documentation Structure
+- The project uses two types of documentation:
+  1. **Root README.md** - Standard markdown for GitHub/quick reference
+     - Contains high-level overview and quick start guide
+     - Uses standard markdown links to Logseq docs
+     - See [README.md](mdc:README.md)
+  
+  2. **Logseq Documentation** - Detailed knowledge base in `ableton-live-git-hooks/`
+     - Uses Logseq-flavored markdown (LFM)
+     - Contains comprehensive documentation and workflows
+     - See [logseq-docs-location.mdc](mdc:.cursor/rules/logseq-docs-location.mdc) for LFM usage rules
+
+## Key Documentation Pages
+- [Repo/Directory/Structure](mdc:give-care-docs/pages/Repo___Directory___Structure.md) - Repository organization
+- [Ableton/Live/Git](mdc:give-care-docs/pages/Ableton___Live___Git.md) - Ableton Live version control
+- [Installation](mdc:give-care-docs/pages/Installation.md) - Setup instructions
+- [Installation/Dev](mdc:give-care-docs/pages/Installation___Dev.md) - Development setup
+- [Dev/Testing](mdc:give-care-docs/pages/Dev___Testing.md) - Testing guidelines
+
+## Important Tools and Technologies
+- **Ableton Live** - Primary DAW for the project
+- **Python Tools** - For managing Ableton Live files and audio processing
+  - See [About.md](mdc:give-care-docs/pages/About.md) for specific tools and their purposes
+
+## Best Practices for AI Assistance
+1. When answering questions about the project:
+   - First check if the information exists in the Logseq docs
+   - Use standard markdown when referencing docs from outside `ableton-live-git-hooks/`
+   - Use LFM only when editing files within `ableton-live-git-hooks/`
+2. For documentation edits:
+   - Follow the rules in [logseq-flavored-markdown.mdc](mdc:.cursor/rules/logseq-cursor-rules/logseq-flavored-markdown.mdc)
+   - Never modify `tags::` frontmatter in any document
+   - Use appropriate markdown style based on location (LFM vs standard)
+3. When searching for information:
+   - Prefer searching in `ableton-live-git-hooks/pages/` for detailed documentation
+   - Use `README.md` for quick reference and project overview
+   - Check [About.md](mdc:give-care-docs/pages/About.md) for conceptual understanding

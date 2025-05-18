@@ -1,0 +1,11 @@
+# About `ableton-live-git-hooks` and the [[alhook]] Command Line interface (CLI)
+	- ## Overview
+		- The repository exposes [[alhook]], a python-based command line tool which can turn Ableton Live file formats files into XML and back so they can be properly versioned in git. [[alhook]] is intended to be referenced inside a project's [[git hooks]]. See [[Ableton/Live/Git]] for the details, but the big picture is that the file formats are zipped XML files that point to the audio files that are stored in git lfs.
+			- [[Ableton/File/.als]] - Ableton Live Project Files
+			- [[Ableton/File/.alc]] - Ableton Live Clip Files
+		- ### Why?
+			- This way but Ableton Live clips and projects in Ableton can be versioned  with git in a way that makes more sense than storing versions of binary files
+	- ## See Also
+		- [[Installation]] - instructions on how to install
+		- ### Development resources
+			- [[Repo/Directory/Structure]] - project directory structure
