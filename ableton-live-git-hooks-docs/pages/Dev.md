@@ -13,5 +13,8 @@ alias:: [[Development]], [[Developing alhook]]
 	- ## [[Dev/Testing]]
 		- ### `mise run test`
 			- This will run all tests. See [[Dev/Testing]] for details.
-	- ## [[Dev/Formatting]]
+		- ## [[Dev/Formatting]]
+			- This page contains basic details about how to format the codebase.
+		- ## [[Dev/Commit Messages]]
+			- This page contains instructions for commit messages.
 		-

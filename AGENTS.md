@@ -114,8 +114,7 @@ This document provides guidance for AI agents working with the `ableton-live-git
    - Follow existing hook patterns
 
 6. **Additional AI instructions**
-   - `.cursor/rules` contains AI instructions for the Cursor AI IDE.
-   - You can consider any instructions in `.cursor/rules` to be instructions for you as well. 
+   - `.cursor/rules/**/*.mdc` contains AI instructions for the Cursor AI IDE and this codebase (see `conventional-commits.mdc` for commit message guidelines).
 
 ## Related Documentation
 
