@@ -33,7 +33,7 @@ alwaysApply: false
   - Pull request descriptions
 - When linking to Logseq pages from outside `ableton-live-git-hooks-docs/`, use standard markdown links:
   ```markdown
-  [Link Text](mdc:give-care-docs/pages/Page___Name.md)
+  [Link Text](mdc:ableton-live-git-hooks-docs/pages/Page___Name.md)
   ```
 - Do not use Logseq-style links (`[[Page Name]]`) outside of `ableton-live-git-hooks-docs/`
 
@@ -48,7 +48,7 @@ alwaysApply: false
 
 2. In `README.md`:
    ```markdown
-   See [Documentation](mdc:give-care-docs/pages/SomePage.md) for details
+   See [Documentation](mdc:ableton-live-git-hooks-docs/pages/SomePage.md) for details
    # This is a standard markdown heading
    ```
 
@@ -61,5 +61,5 @@ alwaysApply: false
 2. In `ableton-live-git-hooks-docs/pages/SomePage.md`:
    ```markdown
    # This heading is wrong (missing bullet point)
-   See [Some Page](mdc:give-care-docs/pages/SomePage.md)  # Wrong: Using standard markdown links in LFM
+   See [Some Page](mdc:ableton-live-git-hooks-docs/pages/SomePage.md)  # Wrong: Using standard markdown links in LFM
    ```
