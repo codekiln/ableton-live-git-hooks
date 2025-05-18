@@ -18,7 +18,7 @@ The [ableton-live-git-hooks-docs](ableton-live-git-hooks-docs/pages/About.md) is
 2. **Using Other Markdown Viewers**
    - The documentation can be viewed in any markdown viewer
    - Note that some LFM features may not render correctly
-   - GitHub's markdown viewer provides a good fallback experience
+   - GitHub's markdown viewer provides a good fallback experience, though it will not facilitate linking between pages in the knowledge base
 
 ### Key Features
 - [Ableton Live Set Management](ableton-live-git-hooks-docs/pages/Ableton___Live___Git.md) - Tools for version controlling `.als` and `.alc` files
