@@ -1,0 +1,3 @@
+# [mise-en-place - mise CLI runner and polyglot package manager](https://mise.jdx.dev/dev-tools/)
+	- > `mise` is a tool that manages installations of programming language runtimes and other tools for local development. For example, it can be used to manage multiple versions of Node.js, Python, Ruby, Go, etc. on the same machine.
+	- This project uses mise through [[PROJECT_ROOT/.mise.toml]], the [[mise/Config/mise.toml]] file for mise in this project. It uses `mise` much in the way some projects use a `Makefile`, to run tasks.

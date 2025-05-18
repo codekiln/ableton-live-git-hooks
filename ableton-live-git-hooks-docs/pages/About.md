@@ -7,5 +7,5 @@
 			- This way but Ableton Live clips and projects in Ableton can be versioned  with git in a way that makes more sense than storing versions of binary files
 	- ## See Also
 		- [[Installation]] - instructions on how to install
-		- ### Development resources
+		- ### [[Dev]] Resources
 			- [[Repo/Directory/Structure]] - project directory structure
