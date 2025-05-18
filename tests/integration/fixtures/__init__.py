@@ -1,0 +1,3 @@
+"""
+Integration fixtures package.
+"""
