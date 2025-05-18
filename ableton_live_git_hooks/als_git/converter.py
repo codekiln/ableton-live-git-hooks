@@ -6,6 +6,7 @@ BIN_SUFFIXES: tuple[str, ...] = (".als", ".alc")  # Ableton binary
 XML_SUFFIXES: tuple[str, ...] = tuple(s + ".xml" for s in BIN_SUFFIXES)
 # ---------------------------------------------------------------------------
 
+
 def extract_bin_to_xml(bin_path: Path) -> Path:
     """
     Decompress an Ableton Live binary container (.als **or** .alc) into
@@ -35,6 +36,7 @@ def extract_bin_to_xml(bin_path: Path) -> Path:
     except OSError as e:
         raise RuntimeError(f"Failed to decompress {bin_path}: {e}") from e
 
+
 # Backwards-compat shim (old callers used this name)
 extract_als_to_xml = extract_bin_to_xml
 
@@ -60,6 +62,7 @@ def xml_to_bin(xml_path: Path) -> Path:
         return bin_path
     except OSError as e:
         raise RuntimeError(f"Failed to compress {xml_path}: {e}") from e
+
 
 # Backwards-compat shim
 xml_to_als = xml_to_bin

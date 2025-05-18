@@ -20,6 +20,7 @@ from .converter import BIN_SUFFIXES, extract_bin_to_xml
 
 _SKIP_SUBSTRINGS = ("/Backup/", "/Ableton Project Info/")
 
+
 def _iter_bins(roots: Iterable[Path]) -> Iterable[Path]:
     for root in roots:
         if not root.exists():
@@ -31,6 +32,7 @@ def _iter_bins(roots: Iterable[Path]) -> Iterable[Path]:
                     continue
                 yield p
 
+
 def _validate_in_repo(path: Path) -> Path:
     try:
         return path.relative_to(REPO_ROOT)
@@ -39,6 +41,7 @@ def _validate_in_repo(path: Path) -> Path:
             f"Path '{path}' is outside the repository root '{REPO_ROOT}'. "
             "All paths must be within the repository."
         )
+
 
 def sync_dirs(dirs: Iterable[str], stage: bool = False) -> None:
     # Validate all directories are in repo first
@@ -55,19 +58,19 @@ def sync_dirs(dirs: Iterable[str], stage: bool = False) -> None:
                 git_path = _validate_in_repo(xml_path)
                 subprocess.run(["git", "add", str(git_path)], check=False)
 
+
 def _cli() -> None:
     ap = argparse.ArgumentParser(
         prog="alhook --sync",
         description="Regenerate XML for modified Ableton files",
     )
-    ap.add_argument(
-        "dirs", nargs="+", help="One or more directories to scan"
-    )
+    ap.add_argument("dirs", nargs="+", help="One or more directories to scan")
     ap.add_argument(
         "--no-stage", action="store_true", help="Do NOT git-add the regenerated XML"
     )
     args = ap.parse_args()
     sync_dirs(args.dirs, stage=not args.no_stage)
+
 
 if __name__ == "__main__":
     _cli()

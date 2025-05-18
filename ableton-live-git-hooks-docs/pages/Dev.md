@@ -13,3 +13,5 @@ alias:: [[Development]], [[Developing alhook]]
 	- ## [[Dev/Testing]]
 		- ### `mise run test`
 			- This will run all tests. See [[Dev/Testing]] for details.
+	- ## [[Dev/Formatting]]
+		-

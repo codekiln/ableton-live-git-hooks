@@ -7,6 +7,7 @@ from ..constants import (
     PACKAGE_GITHOOKS_DIR,
 )
 
+
 def install_hooks():
     """
     Symlink all *.py hooks in PACKAGE_GITHOOKS_DIR to the .git/hooks directory,
@@ -35,6 +36,7 @@ def install_hooks():
         hook_target.symlink_to(hook_script.resolve())
 
         print(f"Installed hook: {hook_name} -> {hook_script.name}")
+
 
 if __name__ == "__main__":
     install_hooks()
