@@ -1,0 +1,51 @@
+[env]
+# Use the project name derived from the current directory
+PROJECT_NAME = "{{ config_root | basename }}"
+
+# Automatic virtualenv activation
+_.python.venv = { path = ".venv", create = true }
+
+[tools]
+# Python version (via pyenv, as a fallback to .python-version)
+python = "{{ get_env(name='PYTHON_VERSION', default='3.13') }}"
+uv = "latest"
+ruff = "latest"
+
+[tasks.install-deps]
+description = "Install all basic dependencies"
+alias = "id"
+run = "uv sync --all-extras"
+
+[tasks.install-deps-dev]
+description = "Install only dev dependencies"
+alias = "idd"
+run = "uv sync --extras dev"
+
+[tasks.install-deps-all]
+description = "Install all dependencies (even dev dependencies)"
+alias = "ida"
+run = "uv sync --all-extras"
+
+[tasks.add-deps]
+description = "Add new dependencies using uv"
+alias = "ad"
+run = "uv pip install $@"
+
+[tasks.test]
+description = "Run tests"
+run = "pytest tests/"
+
+[tasks.lint]
+description = "Lint the code"
+run = "ruff check ./ableton_live_git_hooks"
+
+[tasks.format]
+description = "Format the code"
+run = "ruff format ./ableton_live_git_hooks"
+
+[tasks.info]
+description = "Print project information"
+run = '''
+echo "Project: $PROJECT_NAME"
+echo "Virtual Environment: $VIRTUAL_ENV"
+'''
