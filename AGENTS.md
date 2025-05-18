@@ -9,6 +9,7 @@ This document provides guidance for AI agents working with the `ableton-live-git
 ## Directory Structure
 
 ### Root Directory
+- `.cursor/rules/**/*.mdc` - AI instructions for the Cursor IDE. You can consider these your instructions as well!
 - `.mise.toml` - Project tool configuration (Python version, tasks, etc.)
 - `pyproject.toml` - Python project metadata and dependencies
 - `.git/` - Git repository data
