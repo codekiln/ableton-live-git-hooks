@@ -1,0 +1,79 @@
+---
+description: Conventional Commits and git standards
+globs: 
+alwaysApply: false
+---
+# Conventional Commit Messages with Branch Diffs
+
+This rule provides guidance for writing conventional commit messages
+
+## Writing Commit Messages
+
+### 1. Analyze Changes
+- Do a diff relative to the main branch and a git status
+- Review the diff to understand:
+  - Which files were changed
+  - What types of changes were made (additions, deletions, modifications)
+  - The scope and impact of changes
+
+### 2. Commit Message Structure
+Follow the conventional commits format:
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+Where:
+- `type` is one of:
+  - `feat`: New feature
+  - `fix`: Bug fix
+  - `docs`: Documentation changes
+  - `style`: Code style changes (formatting, etc.)
+  - `refactor`: Code changes that neither fix bugs nor add features
+  - `perf`: Performance improvements
+  - `test`: Adding or modifying tests
+  - `chore`: Maintenance tasks
+  - `ci`: CI configuration changes
+- `scope` (optional): The part of the codebase affected
+- `subject`: Brief description in present tense
+- `body` (optional): Detailed explanation
+- `footer` (optional): Breaking changes, issue references
+
+### 3. Best Practices
+- Use the present tense ("add" not "added")
+- Use imperative mood ("move" not "moves")
+- Keep the subject line under 50 characters
+- Wrap body text at 72 characters
+- Use bullet points for multiple changes
+- Reference issues/PRs in the footer
+
+### 4. Examples
+
+#### Documentation Update
+```
+docs: reorganize development and testing documentation
+
+- Create new [[Installation/Dev]] namespace for development setup
+- Move development testing docs from [[Dev/Testing/Installation]]
+- Update installation guide with clearer development section
+- Add testing conventions documentation
+
+This change improves the organization of development-related
+documentation and makes it easier for contributors to find
+setup and testing information.
+```
+
+#### Maintenance Task
+```
+chore: update pre-commit config to use modern stage names
+
+Migrate from deprecated 'commit' stage to 'pre-commit' stage
+using pre-commit migrate-config
+```
+
+### 5. Related Rules
+- [logseq-flavored-markdown.mdc](mdc:.cursor/rules/logseq-cursor-rules/logseq-flavored-markdown.mdc) - For documentation changes
+- [logseq-docs-location.mdc](mdc:.cursor/rules/logseq-docs-location.mdc) - For understanding documentation structure
