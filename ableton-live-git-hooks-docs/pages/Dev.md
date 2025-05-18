@@ -15,6 +15,6 @@ alias:: [[Development]], [[Developing alhook]]
 			- This will run all tests. See [[Dev/Testing]] for details.
 		- ## [[Dev/Formatting]]
 			- This page contains basic details about how to format the codebase.
-		- ## [[Dev/Commit Messages]]
+		- ## [[Dev/Commit/Message/Standard]]
 			- This page contains instructions for commit messages.
 		-

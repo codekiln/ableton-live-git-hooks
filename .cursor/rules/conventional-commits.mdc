@@ -77,7 +77,7 @@ using pre-commit migrate-config
 ### 5. Related Rules
 - [logseq-flavored-markdown.mdc](mdc:.cursor/rules/logseq-cursor-rules/logseq-flavored-markdown.mdc) - For documentation changes
 - [logseq-docs-location.mdc](mdc:.cursor/rules/logseq-docs-location.mdc) - For understanding documentation structure
-- [Commit Message Guidelines](mdc:ableton-live-git-hooks-docs/pages/Dev___Commit_Messages.md) - Detailed commit message guidelines in project documentation
+- [Commit Message Standard](mdc:ableton-live-git-hooks-docs/pages/Dev___Commit___Message___Standard.md) - Detailed commit message guidelines in project documentation
 
 ### 6. Workflow for AI Agents
 
