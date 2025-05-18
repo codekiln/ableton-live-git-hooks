@@ -1,5 +1,5 @@
 ---
-	description: Guidelines for appending summary entries to Logseq journal pages after AI actions
+	description: Guidelines for appending summary entries to Logseq journal pages after AI actions, including standard git commit references for traceability
 	globs: 
 	alwaysApply: false
 ---
@@ -32,3 +32,13 @@ This rule instructs AI agents to record a summary of their actions in the daily 
 ## 5. Related Rules
 - [logseq-flavored-markdown.mdc](mdc:.cursor/rules/logseq-cursor-rules/logseq-flavored-markdown.mdc) - LFM formatting rules
 - [logseq-docs-location.mdc](mdc:.cursor/rules/logseq-docs-location.mdc) - Documentation structure guidelines
+
+## 6. Git Commit References
+- If your action includes a git commit, provide a link to the commit on GitHub by linking the commit message subject to the GitHub commit URL, immediately followed by the `[[git/commit]]` tag. For example:
+  `[chore: bump pytest 3.4.5->3.4.6 (23fl2kn)](https://github.com/owner/repo/commit/abc1234) [[git/commit]]`
+- Do not use `[[git/commit]]` in lieu of a real GitHub link. It should only follow a properly formatted link.
+- This ensures traceability between journal entries and code changes.
+
+## 7. Searching Journal History
+- AI agents can search through journal pages (in `ableton-live-git-hooks-docs/journals/`) to review the history of development.
+- Use date-based filenames (`YYYY_MM_DD.md`), keywords, or commit references to locate relevant entries.
