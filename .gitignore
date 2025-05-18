@@ -1,1 +1,10 @@
- give-care-album/
+# Python artifacts
+.venv/
+__pycache__/
+*.py[cod]
+
+# Environment files
+.env
+.python-version
+
+give-care-album
