@@ -78,3 +78,12 @@ using pre-commit migrate-config
 - [logseq-flavored-markdown.mdc](mdc:.cursor/rules/logseq-cursor-rules/logseq-flavored-markdown.mdc) - For documentation changes
 - [logseq-docs-location.mdc](mdc:.cursor/rules/logseq-docs-location.mdc) - For understanding documentation structure
 - [Commit Message Guidelines](mdc:ableton-live-git-hooks-docs/pages/Dev___Commit_Messages.md) - Detailed commit message guidelines in project documentation
+
+### 6. Workflow for AI Agents
+
+When working within this repository, AI agents should follow this workflow when making commits:
+1. Implement the required changes.
+2. Stage specific files with targeted `git add`.
+3. Update the project journal with relevant notes.
+4. Commit changes using the conventional commit format.
+5. Add a commit reference to the journal entry using the `[[git/commit]]` tag.

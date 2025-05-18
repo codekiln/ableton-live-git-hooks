@@ -1,0 +1,34 @@
+---
+	description: Guidelines for appending summary entries to Logseq journal pages after AI actions
+	globs: 
+	alwaysApply: false
+---
+# Logseq Journal Update Guidelines
+
+This rule instructs AI agents to record a summary of their actions in the daily Logseq journal page using Logseq Flavored Markdown (LFM).
+
+## 1. Journal Page Location
+- The journal page is located at `ableton-live-git-hooks-docs/journals/{{YYYY_MM_DD}}.md`
+- Use today's date for the page name (e.g., `2025_05_18.md`).
+
+## 2. Entry Structure
+- Append under a top-level bullet labeled `[[AI/Actions]]` if present, otherwise create it.
+  - Example:
+    - `- [[AI/Actions]]`
+      - `- [HH:MM] Brief description of action`
+- Use `HH:MM` in 24-hour format for timestamps.
+- Each entry should be one bullet per action.
+
+## 3. Formatting
+- Use TABs for indentation and ensure each line starts with `- `.
+- Follow LFM rules: heading depth = indent level (level 0: `- #`, level 1: `- ##`, etc.).
+- No blank lines between bullets.
+
+## 4. Content Guidelines
+- Summarize the action in past tense or present perfect.
+- Mention affected files or significant results if relevant.
+- Keep entries concise (one sentence).
+
+## 5. Related Rules
+- [logseq-flavored-markdown.mdc](mdc:.cursor/rules/logseq-cursor-rules/logseq-flavored-markdown.mdc) - LFM formatting rules
+- [logseq-docs-location.mdc](mdc:.cursor/rules/logseq-docs-location.mdc) - Documentation structure guidelines
