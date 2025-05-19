@@ -1,0 +1,31 @@
+{
+  "bundles": {
+    "ableton_live_git_hooks-856": {
+      "name": "ableton_live_git_hooks",
+      "created": "2025-05-19T09:05:51.113Z",
+      "lastUsed": "2025-05-19T09:05:51.113Z",
+      "tags": [],
+      "files": [
+        "ableton_live_git_hooks"
+      ]
+    },
+    "most-context-for-web-ai-472": {
+      "name": "most-context-for-web-ai",
+      "created": "2025-05-19T09:06:23.435Z",
+      "lastUsed": "2025-05-19T09:07:18.463Z",
+      "tags": [],
+      "files": [
+        "ableton_live_git_hooks",
+        "ableton-live-git-hooks-docs/journals",
+        "ableton-live-git-hooks-docs/pages",
+        "ableton-live-git-hooks-docs/AGENTS.md",
+        "README.md",
+        "pyproject.toml",
+        "AGENTS.md",
+        ".mise.toml",
+        ".gitignore",
+        ".cursor/rules"
+      ]
+    }
+  }
+}
