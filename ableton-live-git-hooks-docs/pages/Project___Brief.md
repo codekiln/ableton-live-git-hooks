@@ -1,4 +1,4 @@
-- # Project Brief: Ableton Live Git Hooks
+# Project Brief: Ableton Live Git Hooks
 	- ## 1. Concept, Problem & Goals
 		- **Core Concept:** ableton-live-git-hooks lets you quickly set up a repo to properly version Ableton Live files in Git.
 		- **Primary Problem:** Ableton Live users are musicians, not developers. They may not be familiar with Git or Ableton Live's internals. This tool helps them version their projects correctly without steep learning curves.
@@ -28,8 +28,7 @@
 		- **CLI Framework:** Keep it simple with `argparse`.
 		- **YAML Management:** Plain YAML templates (no Jinja2).
 	- ## 6. Known Technical Constraints or Preferences
-		- > 
-		- *Initial thoughts — not final decisions.*
+		- > *Initial thoughts — not final decisions.*
 		- **Repository Style:** Monorepo (package, docs, and examples together).
 		- **Service Architecture:** Not applicable (no web component planned).
 		- **CI/CD Integration:** GitHub Actions for testing and hook installation.
