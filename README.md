@@ -4,6 +4,7 @@ Hooks for storing Ableton Live `.als` and `.alc` files in git
 ### Project Overview
 - [Repository Structure](ableton-live-git-hooks-docs/pages/Repo___Directory___Structure.md) - Detailed overview of the repository organization
 - [Installation Guide](ableton-live-git-hooks-docs/pages/Installation.md) - Setup instructions and Git hooks configuration
+- [Project Brief](ableton-live-git-hooks-docs/pages/Project___Brief.md) - High-level goals, scope, and technical constraints
 
 ### Viewing Documentation
 The [ableton-live-git-hooks-docs](ableton-live-git-hooks-docs/pages/About.md) is written in Logseq-flavored markdown (LFM) and can be viewed in two ways:

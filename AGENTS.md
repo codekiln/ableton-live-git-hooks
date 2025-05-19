@@ -118,6 +118,7 @@ This document provides guidance for AI agents working with the `ableton-live-git
 
 ## Related Documentation
 
+- [Project Brief](ableton-live-git-hooks-docs/pages/Project___Brief.md) - High-level goals, scope, and technical constraints
 - [Setting up development environment](ableton-live-git-hooks-docs/pages/mise___How%20To___Install%20Mise___The%20First%20Time.md) - Setting up development environment
 - [Testing conventions and practices](ableton-live-git-hooks-docs/pages/Dev___Testing.md) - Testing conventions and practices
 - [Python setup with mise and uv](ableton-live-git-hooks-docs/pages/mise___Python___How%20To___Use%20mise%20to%20set%20up%20a%20virtualenv%20with%20uv.md) - Python setup
