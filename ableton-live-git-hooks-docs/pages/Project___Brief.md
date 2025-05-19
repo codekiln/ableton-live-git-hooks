@@ -1,0 +1,40 @@
+- # Project Brief: Ableton Live Git Hooks
+	- ## 1. Concept, Problem & Goals
+		- **Core Concept:** ableton-live-git-hooks lets you quickly set up a repo to properly version Ableton Live files in Git.
+		- **Primary Problem:** Ableton Live users are musicians, not developers. They may not be familiar with Git or Ableton Live's internals. This tool helps them version their projects correctly without steep learning curves.
+		- **Top Goals:**
+			- Simplify hook installation for Ableton Live projects via `alhook --install-hooks`.
+			- Guide users to best practices with Git LFS for sound files (future enhancement).
+			- Scaffold repositories in an opinionated way for users less familiar with Python (future enhancement).
+	- ## 2. Target Users
+		- **User Personas:** Primarily solo musicians with some Git knowledge.
+		- **Skill Level:** Comfortable with CLI tools, Git, and YAML.
+		- **Environment:** Mixed platforms (macOS first, then Windows and Linux).
+	- ## 3. MVP Scope
+		- **In-Scope:**
+			- Support installation into `pyproject.toml` as a dependency.
+			- Scaffold a default `lefthook.yml` template.
+			- Install `pre-commit` and `post-checkout` hooks via Lefthook.
+			- Provide the CLI (`alhook`) usable via pip and pipx or uvx in the future (pipx support not part of initial release).
+		- **Out-of-Scope (MVP):**
+			- Interactive wizard for configuration.
+			- Support for additional hooks or custom CLI flags beyond defaults.
+	- ## 4. Post-MVP Scope (Future Enhancements)
+		- **Additional Hooks:** Potentially `pre-push` once Git LFS workflows are added.
+		- **Hook Logic Plugins:** Architect a plugin system for custom scripts.
+		- **Analytics & Reporting:** Not planned.
+	- ## 5. Platform & Technology Preferences
+		- **Language & Packaging:** Python package on PyPI, using Poetry/pip; CLI installable via pipx/uvx later.
+		- **CLI Framework:** Keep it simple with `argparse`.
+		- **YAML Management:** Plain YAML templates (no Jinja2).
+	- ## 6. Known Technical Constraints or Preferences
+		- > 
+		- *Initial thoughts — not final decisions.*
+		- **Repository Style:** Monorepo (package, docs, and examples together).
+		- **Service Architecture:** Not applicable (no web component planned).
+		- **CI/CD Integration:** GitHub Actions for testing and hook installation.
+	- ## Next Steps
+		- Review this Project Brief and confirm the scope and goals.
+		- Draft the `install_hooks()` implementation and default `lefthook.yml` template.
+		- Update `Installation.md` with client and host workflows.
+		- Prototype in a sample repository and validate behavior.
