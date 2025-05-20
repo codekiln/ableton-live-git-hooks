@@ -1,0 +1,72 @@
+# Project Requirements for `algit`
+	- ## 1. Overview & Background
+		- **Background:** Underneath the hood, Ableton Live `.als` and `.alc` files are gzipped XML blobs. As a developer-musician hybrid, you want version control that treats these project files intuitively in Git—storing readable XML in history and regenerating binaries on checkout. This project, now named `algit` (short for "Ableton Live Git"), provides a CLI to automate that process via Git filter drivers rather than traditional hook symlinks.
+		- **Problem Statement:**
+			- **Core Concept:** `algit` offers a Git-aware CLI to transform, store, and reconstruct Ableton Live files in a Git repository seamlessly.
+			- **Primary Problem:** Ableton Live users, often musicians, aren't always familiar with Git internals. They need a simple command-line tool—`algit`—that scaffolds filter configuration and handles XML ↔ binary transformation transparently.
+			- **Top Goals:**
+				- Automate `.gitattributes` and Git filter setup to clean (export to XML) and smudge (import to binary) Ableton files.
+				- Provide clear CLI commands (`algit install-filter`, `algit export`, `algit import`) that abstract Git filter complexity.
+				- Ensure the tool works identically in CLI and IDE environments (e.g., VSCode Git integration).
+	- ## 2. Goals & Success Metrics
+		- ### 2.1 Product Goals (Outcome-Focused Epics & User Stories)
+			- **Epic: Filter Configuration**
+				- **User Story 1:** As a user, I want `algit install-filter` to generate `.gitattributes` entries and update my `.git/config` so that Git cleans and smudges Ableton files automatically.
+				- **User Story 2:** As a developer-musician, I want `algit --version` and `algit help` to confirm CLI availability and commands.
+			- **Epic: File Transformation**
+				- **User Story 3:** As a Git user, I want `git add project.als` to store `project.als.xml` in history, not the binary, via Git's clean filter.
+				- **User Story 4:** As a Git user, I want `git checkout` to reconstruct `.als` binaries automatically via Git's smudge filter.
+		- ### 2.2 Success Metrics
+			- **Filter Setup Rate:** ≥ 95% of fresh repos configured successfully with `algit install-filter`.
+			- **Transformation Accuracy:** 100% fidelity between original and reconstructed `.als` files (via binary diff) across 10 sample projects.
+			- **IDE Compatibility:** No filter errors reported when using VSCode's Git pane in 100% of tests.
+			- **CLI Usability:** ≥ 90% of users complete filter installation and verify transformation within 2 minutes (via testing script timings).
+	- ## 3. User Workflow & Scenarios
+		- ### 3.1 Typical User Workflow
+			- **Clone or Initialize Repo**
+				- `git clone <repo-url>` or `git init` in your Ableton musical project folder.
+			- **Install CLI**
+				- `pip install algit`
+				- Or via `pipx install algit` (for isolated venv installs).
+			- **Run Filter Installer**
+				- `algit install-filter`
+				- Scaffolds `.gitattributes` and updates `.git/config` with the "ableton" filter.
+			- **Modify & Stage**
+				- Edit `song.als` in Ableton, then:
+					- ~~~
+					  git add song.als       # Git clean filter exports XML
+					  git commit -m "Edit song structure"
+					  ~~~
+			- **Checkout / Clone**
+				- `git checkout <branch>` or fresh clone: binaries get reconstructed automatically via smudge filter.
+		- ### 3.2 Scenario Examples
+			- **Initial Setup:** Jane, a solo musician, installs `algit`, runs `algit install-filter`, and immediately pushes changes. Her Git history contains XML diffs, and Ableton opens binaries seamlessly.
+			- **IDE Workflow:** Raj uses VSCode's Source Control panel—clicking "+" to stage sees no binary leak, and commits succeed with XML storage behind the scenes.
+			- **Filter Repair:** Alex accidentally removes `.gitattributes`. Running `algit install-filter` again restores it without overwriting custom filter settings.
+	- ## 4. Technical Architecture Overview
+		- **CLI Module:** Implements commands: `install-filter`, `export --xml`, `import --binary`, with single-common code paths.
+		- **Git Config Handler:** Reads and writes `.gitattributes` and `.git/config`, with idempotent operations.
+		- **Environment Detection:** Validates `algit` in `$PATH`; provides explicit wrapper scripts in `.git/hooks` if needed for IDE shells.
+		- **Filter Driver Implementation:** Uses stdin/stdout for data streaming to/from Git; ensures no CRLF conversions and marks filters as `binary` in attributes.
+	- ## 5. Next Steps
+		- Finalize CLI interface names and flags in a spec.
+		- Prototype `install-filter` and transformation commands.
+		- Test end-to-end on macOS CLI and VSCode.
+		- Iterate based on developer-musician feedback.
+	- ## 6. Stakeholders
+		- **Developer-Musician:** The primary user, blending musical creativity with Git-based version control.
+		- **Documentation Maintainer:** Ensures setup guides and reference materials stay accurate as the tool evolves.
+	- ## 7. Assumptions & Dependencies
+		- **Python:** ≥ 3.12 installed and accessible via `/usr/bin/env python3`.
+		- **Git:** ≥ 2.10 with support for clean/smudge filters.
+		- **Platform:** macOS (initial target; Windows/Linux support planned post-MVP).
+		- **CLI Availability:** `algit` must be in the user's `$PATH` for both shell and IDE Git integrations.
+	- ## 8. Risks & Mitigations
+		- **IDE PATH Mismatches:** Users' IDEs (e.g., VSCode) may not inherit the same `PATH`.
+			- *Mitigation:* Provide an executable wrapper in `.git/hooks` and document IDE `git.path` settings.
+		- **Filter Misconfiguration on Windows:** Windows shells may handle filters differently.
+			- *Mitigation:* Flag Windows as a future work item; include clear errors and guidance for Windows users.
+		- **User Confusion Around Sidecar Pattern:** Users unfamiliar with sidecar XML workflows may accidentally stage binaries.
+			- *Mitigation:* Ship default `.gitattributes` and README examples that reinforce ignoring `.als`/`.alc` and explain the pattern clearly.
+		- **Testing Complexity:** Git filter drivers (clean/smudge) are esoteric and challenging to test effectively.
+			- *Mitigation:* Develop a test harness that simulates Git's filter pipeline, including edge cases like partial checkouts and merge conflicts. Document test patterns for future contributors.
